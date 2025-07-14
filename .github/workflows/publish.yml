@@ -16,6 +16,11 @@ jobs:
         with:
           go-version: "1.24.4"
 
+      - name: Install
+        run: |
+          go mod init github.com/niubirbang/sysproxy/cli
+          go mod tidy
+
       - name: Build Windows
         working-directory: ./cmd
         run: |
